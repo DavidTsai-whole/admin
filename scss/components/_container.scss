@@ -1,0 +1,31 @@
+.container{
+    position: relative;
+    width: 100%;
+    .main{
+        position: absolute;
+        width:calc(100% - 300px) ;
+        left: 300px;
+        min-height: 100vh;
+        background: #f5f5f5;
+        transition: 0.5s;
+        &.active{
+            left: 60px;
+            width:calc(100% - 60px) ;
+        }
+        @include desktop(){
+            width: 100%;
+            left:0;
+            &.active{
+                width: calc(100% - 300px);
+                left:300px;
+            }
+        }
+        @include phone(){
+            &.active{
+                left: 60px;
+                width:calc(100% - 60px);
+            }
+            
+        }
+    }
+}

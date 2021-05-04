@@ -1,0 +1,115 @@
+.details {
+    margin: 0px 20px;
+    margin-bottom: 20px;
+    display: grid;
+    grid-gap:20px;
+    grid-template-columns: 2fr 1fr;
+    .recentOrder {
+        background: white;
+        padding: 20px;
+        table {
+            margin-top: 20px;
+            width: 100%;
+            thead {
+                td {
+                    font-weight: bold;
+                }
+            }
+            tr{
+                border-bottom: 1px solid rgba(0,0,0,0.2);
+                td{
+                    padding: 10px 5px;
+                }
+            }
+            tbody{
+                tr{
+                    &:hover {
+                        background: $orange;
+                        color: white;
+                    }
+                    &:last-child{
+                        border-bottom:0 ;
+                    }
+                }
+                .status{
+                    padding: 2px 4px;
+                    color:white;
+                    border-radius: 4px;
+                    font-size: 14px;
+                    &.delivered{
+                        background: $success;
+                    }
+                    &.pending{
+                        background: $blue;
+                    }
+                    &.return {
+                        background: $danger;
+                    }
+                    &.inprogress{
+                        background: black;
+                    }
+                 }
+            }
+            
+            @include phone{
+                width: 500px;
+            }
+        }
+        @include phone{
+            overflow-x: auto;
+        }
+    }
+
+    .title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        h2 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        select{
+            padding: 5px;
+            border-radius: 4px;
+        }
+    }
+    .recentCustomers{
+        background: white;
+        padding:20px;
+        table{
+            width: 100%;
+            margin-top: 20px;
+            tbody{
+                tr{
+                    display: flex;
+                    align-items: center;
+                    font-weight: bold;
+                    &:hover{
+                        background: $orange;
+                        color:white;
+                    }
+                    td{
+                        padding: 8px 5px;
+                        span{
+                            font-size: 14px;
+                            color:#999;
+                        }
+                    }
+                }
+                img{
+                    position: relative;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                    
+                }
+            }
+            
+        }
+        
+    }
+    @include pad(){
+        grid-template-columns:repeat(1,1fr)
+    }
+}

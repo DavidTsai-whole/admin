@@ -1,0 +1,66 @@
+.sidebar {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: #842b00;
+    transition: 0.5s;
+    &.active{
+        width: 60px;
+    }
+    ul {
+/*         top:0;
+        position: absolute;
+        left: 0; */
+        width: 100%;
+        color: white;
+        h1 {
+            font-size: 26px;
+        }
+        li {
+            &:hover {
+                background: #d94600;
+            }
+            &:nth-child(1):hover {
+                background: #ff5809;
+            }
+            &:nth-child(1) {
+                background: #ff5809;
+                margin-bottom: 20px;
+            }
+
+            a {
+                display: flex;
+                color:white;
+                font-weight: bold;
+                align-items: center;
+                .icon{
+                    min-width: 60px;
+                    height: 60px;
+                    text-align: center;
+                    line-height: 60px;
+                    font-size: 24px;
+                }
+            }
+            .title{
+                white-space: nowrap;
+            }
+        }
+    }
+    
+    @include desktop(){
+        left: -300px;
+        &.active{
+            left: 0px;
+            width: 300px;
+     }
+ }
+ @include phone(){
+
+    
+    &.active{
+      width: 60px;  
+    }
+}
+
+}
+
